@@ -1,6 +1,5 @@
 # Inv_Flow: Invertible n x n Convolutions for Normalizing Flows
 
-## Getting Started
 
 ## Environment Setup
 
