@@ -22,21 +22,23 @@
 `pip3 install torch==1.8.2 torchvision==0.9.2 torchaudio==0.8.2 --extra-index-url https://download.pytorch.org/whl/lts/1.8/cu102`
 `pip3 install Ninja==1.10.2.3 cython torchsummary wandb`
 Note that this package requires Ninja to build the C++ extensions required to efficiently compute the Fast-Flow gradient, however this should be installed automatically with pytorch or 
-`pip install Ninja`
+    pip install Ninja
 
 
 ## Install SNF package
 Install the snf package locally for development. This allows you to run experiments with the snf command. 
 Download the SNF module form : [Self Normalizing Flows](https://github.com/akandykeller/SelfNormalizingFlows)
 Clone repo with `git clone https://github.com/akandykeller/SelfNormalizingFlows/`
-At the root of the project directory run: 
-` pip install -e . `
+At the root of the project directory run:
+
+     pip install -e .
 
 ## Create the inv_conv package with cuda implimentation (Custom C++ and CUDA Extensions for Inv_conv)
 
 ### create inv_conv module for inv_conv_cuda with inverse pass, fwd pass, dw gradients, dy gradients
-`cd inv_flow/utils/inv_conv_cuda`
-`python setup.py install`
+    cd inv_flow/utils/inv_conv_cuda
+
+    python setup.py install
 
 Docs with ecample: [Custom C++ and CUDA Extensions](https://pytorch.org/tutorials/advanced/cpp_extension.html)
 
@@ -138,27 +140,30 @@ The training and testing code in this repo is based on code in Self Normalizing 
 
 Please use the following BibTex Code to cite our papers
 
-<!-- ```
+1. CIncFlow paper
 
-@inproceedings{nagar2021cinc,
-title={{CI}nC Flow: Characterizable Invertible $ 3 \times 3 $ Convolution},
-author={Sandeep Nagar and Marius Dufraisse and Girish Varma},
-booktitle={The 4th Workshop on Tractable Probabilistic Modeling},
-year={2021},
-url={https://openreview.net/forum?id=kl1ds_AeLRM}
-} 
 
-@conference{visapp23,
-author={Aditya Kallappa. and Sandeep Nagar. and Girish Varma.},
-title={FInC Flow: Fast and Invertible k × k Convolutions for Normalizing Flows},
-booktitle={Proceedings of the 18th International Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications (VISIGRAPP 2023) - Volume 5: VISAPP},
-year={2023},
-pages={338-348},
-publisher={SciTePress},
-organization={INSTICC},
-doi={10.5220/0011876600003417},
-isbn={978-989-758-634-7},
-issn={2184-4321},
-}
-``` -->
+        @inproceedings{nagar2021cinc,
+        title={{CI}nC Flow: Characterizable Invertible $ 3 \times 3 $ Convolution},
+        author={Sandeep Nagar and Marius Dufraisse and Girish Varma},
+        booktitle={The 4th Workshop on Tractable Probabilistic Modeling},
+        year={2021},
+        url={https://openreview.net/forum?id=kl1ds_AeLRM}
+        }
+
+2. FIncFlow paper
+
+       @conference{visapp23,
+        author={Aditya Kallappa. and Sandeep Nagar. and Girish Varma.},
+        title={FInC Flow: Fast and Invertible k × k Convolutions for Normalizing Flows},
+        booktitle={Proceedings of the 18th International Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications (VISIGRAPP 2023) - Volume 5: VISAPP},
+        year={2023},
+        pages={338-348},
+        publisher={SciTePress},
+        organization={INSTICC},
+        doi={10.5220/0011876600003417},
+        isbn={978-989-758-634-7},
+        issn={2184-4321},
+        }
+
 
