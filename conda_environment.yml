@@ -1,0 +1,16 @@
+name: inv_flow
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.9
+  - torchvision=0.8.1
+  - cudatoolkit=11.0
+  - pytorch=1.7.0
+  - wandb
+  - torchsummary
+  - cython
+  - matplotlib
+  - scikit-learn
+  - Ninja==1.10.2.3
