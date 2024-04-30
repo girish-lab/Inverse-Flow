@@ -44,6 +44,9 @@ from experiments.emerging_glow import create_model as create_model_emerging
 from cinc_mnist import create_model as create_model_cinc
 
 
+from layers.inv_conv import inv_flow       # This is the important part for Invertible Convolution (Inv_flow)
+
+
 imagenet64_data_dir = '/scratch/aditya.kallappa/Imagenet'
 
 # from prettytable import PrettyTable
@@ -59,8 +62,17 @@ imagenet64_data_dir = '/scratch/aditya.kallappa/Imagenet'
 #     # print(table)
 #     # print(f"Total Trainable Params: {total_params}")
 #     return total_params
-    
-
+def test_inv_conv_():
+    x = torch.randn((1, 2, 3, 3))
+    # layer = PaddedConv2d(2, 2, (3, 3), bias
+def inv_flow():
+    x = torch.randn((1, 2, 3, 3))
+    layer = inv_flow(2, 2, (3, 3))
+    layer.eval()
+    with torch.no_grad():
+        forward_output, _ = layer.forward(x)
+        reverse_input = layer.reverse(forward_output)
+        print("Error:", torch.mean((x - reverse_input) ** 2).item())
 def test_PaddedConv2d(x=None, w=None, kernel_size=(3, 3), bias=False, order='TL', is_input=True, print_answer=False):
     if x is None:
         x = torch.randn((1, 2, 3, 3))
