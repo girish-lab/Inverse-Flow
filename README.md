@@ -9,7 +9,7 @@
 
 
 1. Make sure you have Anaconda or Miniconda installed.
-2. Clone repo with `git clone https://github.com/naagar/Inv_Flow/.`
+2. Clone repo with `git clone https://github.com/naagar/Inv_Flow/`
 3. Go into the cloned repo: `cd Inv_Flow`
 4. Create the environment: `conda env create inv_flow python=3.9`
 5. Activate the environment: `source activate inv_flow`
