@@ -110,7 +110,7 @@ The configuration dictionary is mainly used to modify the training procedure spe
 ## Model Arch. 
 default 
 
-![arch](images/inv_flow_arch.pdf)
+![arch](images/inv_flow_arch.png)
 ## Running an experiment
 ### MNIST 
 
