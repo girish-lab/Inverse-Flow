@@ -106,6 +106,11 @@ The configuration dictionary is mainly used to modify the training procedure spe
 - `'plot_recon'`: *bool*, if True, plot reconstruction of training images.
 - `'log_timing'`: *bool*, if True, compute mean and std. of time per batch and time per sample. Print to screen and save as summary statistic of experiment.
 
+
+## Model Arch. 
+default 
+
+![arch](images/inv_flow_arch.pdf)
 ## Running an experiment
 ### MNIST 
 
