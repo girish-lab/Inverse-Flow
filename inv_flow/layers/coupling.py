@@ -42,7 +42,7 @@ class Conv2dZero(nn.Module):
 
 
 class Coupling(FlowLayer):
-    def __init__(self, input_size, width=512, n_context=None):
+    def __init__(self, input_size, width=32, n_context=None):
         super().__init__()
         self.n_channels = n_channels = input_size[0]
         self.half_channels = n_channels // 2
@@ -59,9 +59,9 @@ class Coupling(FlowLayer):
                                            kernel_size=(3,3), padding=(1,1), bias=True), # bias=True, (san_n)
                                  nn.ReLU(),
                                 #  nn.ELU(inplace=True),
-                                #  nn.Conv2d(width, width, (1,1), bias=True), # bias=True, (san_n)
+                                 nn.Conv2d(width, width, (1,1), bias=True), # bias=True, (san_n)
                                 #  nn.ReLU(),
-                                #  nn.ELU(inplace=True),
+                                 nn.ELU(inplace=True),
                                  Conv2dZero(width, n_channels), #  removed (san_n)
                                 #  nn.ELU(inplace=True),
                                 #  nn.ReLU(),
