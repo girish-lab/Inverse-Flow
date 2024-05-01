@@ -256,7 +256,7 @@ class Experiment:
             if self.config['grad_clip_norm'] is not None:
                 # print("True")
                 torch.nn.utils.clip_grad_value_(self.model.parameters(), 
-                                               1.)
+                                               0.1)
             # parameters norm clamp
             if self.config['grad_clip_norm'] is not None:
                 # print("True")
