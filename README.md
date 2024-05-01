@@ -28,8 +28,12 @@ Note that this package requires Ninja to build the C++ extensions required to ef
 
 ## Install SNF package
 Install the snf package locally for development. This allows you to run experiments with the snf command. 
+
 Download the SNF module form : [Self Normalizing Flows](https://github.com/akandykeller/SelfNormalizingFlows)
-Clone repo with `git clone https://github.com/akandykeller/SelfNormalizingFlows/`
+Clone repo with 
+
+`git clone https://github.com/akandykeller/SelfNormalizingFlows/`
+
 At the root of the project directory run:
 
      pip install -e .
