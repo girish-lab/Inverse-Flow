@@ -34,7 +34,8 @@ At the root of the project directory run:
 
      pip install -e .
 
-## Create the inv_conv package with cuda implimentation (Custom C++ and CUDA Extensions for Inv_conv)
+## Create the inv_conv package with cuda implimentationI
+(Custom C++ and CUDA Extensions for Inv_conv) 
 
 ### create inv_conv module for inv_conv_cuda with inverse pass, fwd pass, dw gradients, dy gradients
     cd inv_flow/utils/inv_conv_cuda
