@@ -20,9 +20,10 @@
 
 ## PyTorch requirements (with python3.9)
 `pip3 install torch==1.8.2 torchvision==0.9.2 torchaudio==0.8.2 --extra-index-url https://download.pytorch.org/whl/lts/1.8/cu102`
+
 `pip3 install Ninja==1.10.2.3 cython torchsummary wandb`
-Note that this package requires Ninja to build the C++ extensions required to efficiently compute the Fast-Flow gradient, however this should be installed automatically with pytorch or 
-    pip install Ninja
+
+Note that this package requires Ninja to build the C++ extensions required to efficiently compute the Fast-Flow gradient, however this should be installed automatically with pytorch.
 
 
 ## Install SNF package
