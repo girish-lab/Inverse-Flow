@@ -1,0 +1,181 @@
+logs
+best samples: 2L-16K_IF_MNIST_Adam_Exp_0.997_0.001_28:04:2024 23:32:30
+Best Val LogPx: inf
+Test LogPx: inf
+Epoch: 1
+Best Val LogPx: 4122.23388671875
+Best Val BPD: 7.585620880126953
+Test LogPx: 4134.41845703125
+Test BPD: 7.608042240142822
+Epoch: 2
+Best Val LogPx: 4064.911376953125
+Best Val BPD: 7.480137348175049
+Test LogPx: 4073.30224609375
+Test BPD: 7.495578289031982
+Epoch: 3
+Epoch: 4
+Epoch: 5
+Epoch: 6
+Epoch: 7
+Epoch: 8
+Epoch: 9
+Epoch: 10
+Epoch: 11
+
+
+
+Epoch: 0
+Best Val LogPx: inf
+Test LogPx: inf
+Epoch: 1
+Best Val LogPx: 5382.93798828125
+Best Val BPD: 9.905533790588379
+Test LogPx: 5382.326171875
+Test BPD: 9.904407501220703
+Epoch: 2
+Epoch: 3
+Epoch: 4
+Epoch: 5
+Epoch: 6
+Epoch: 7
+Epoch: 8
+Epoch: 9
+Epoch: 10
+Epoch: 11
+Epoch: 12
+Epoch: 13
+Epoch: 14
+
+
+#########                FIncFlow            ##########
+
+wandb: Syncing run 2L-16K FastFlow_MNIST_Adam_Exponential_0.99_0.001_28:04:2024 23:42:45
+wandb: ⭐️ View project at https://wandb.ai/inv_flow/Inv_Flow_MNIST
+wandb: 🚀 View run at https://wandb.ai/inv_flow/Inv_Flow_MNIST/runs/bi3gh9x6
+Epoch: 0
+Best Val LogPx: inf
+Test LogPx: inf
+Epoch: 1
+Best Val LogPx: 28083.083984375
+Best Val BPD: 51.67771530151367
+Test LogPx: 28083.7890625
+Test BPD: 51.679012298583984
+Epoch: 2
+Best Val LogPx: 26572.708984375
+Best Val BPD: 48.89836502075195
+Test LogPx: 26573.443359375
+Test BPD: 48.899715423583984
+Epoch: 3
+Best Val LogPx: 26534.462890625
+Best Val BPD: 48.82798385620117
+Test LogPx: 26533.576171875
+Test BPD: 48.826351165771484
+Epoch: 4
+Epoch: 5
+Epoch: 6
+Epoch: 7
+Epoch: 8
+Epoch: 9
+Epoch: 10
+Epoch: 11
+Epoch: 12
+Epoch: 13
+Epoch: 14
+Epoch: 15
+Epoch: 16
+Epoch: 17
+Epoch: 18
+
+
+Epoch: 0
+Best Val LogPx: inf
+Test LogPx: inf
+Epoch: 1
+Best Val LogPx: 6116.5654296875
+Best Val BPD: 11.255534172058105
+Test LogPx: 6144.09375
+Test BPD: 11.306191444396973
+Epoch: 2
+Epoch: 3
+Best Val LogPx: 3619.709228515625
+Best Val BPD: 6.660888671875
+Test LogPx: 3610.603515625
+Test BPD: 6.644132614135742
+Epoch: 4
+Epoch: 5
+Epoch: 6
+Epoch: 7
+Epoch: 8
+Epoch: 9
+Epoch: 10
+Epoch: 11
+
+
+
+
+
+
+
+Best BPD
+Epoch: 0
+Best Val LogPx: inf
+Test LogPx: inf
+Epoch: 1
+Best Val LogPx: 1173398.0
+Best Val BPD: 2159.254638671875
+Test LogPx: 1131631.0
+Test BPD: 2082.39599609375
+Epoch: 2
+Best Val LogPx: 8182.5595703125
+Best Val BPD: 15.057319641113281
+Test LogPx: 8017.2587890625
+Test BPD: 14.753137588500977
+Epoch: 3
+Best Val LogPx: 4100.08740234375
+Best Val BPD: 7.544867515563965
+Test LogPx: 3996.834716796875
+Test BPD: 7.354864597320557
+Epoch: 4
+Epoch: 5
+Best Val LogPx: 1760.367919921875
+Best Val BPD: 3.239380359649658
+Test LogPx: 1756.7681884765625
+Test BPD: 3.2327561378479004
+Epoch: 6
+Epoch: 7
+Epoch: 8
+Epoch: 9
+Epoch: 10
+Epoch: 11
+Epoch: 12
+Epoch: 13
+Epoch: 14
+Epoch: 15
+Epoch: 16
+Epoch: 17
+Epoch: 18
+Epoch: 19
+Epoch: 20
+wandb: - 8.455 MB of 8.455 MB uploaded
+wandb: Run history:
+wandb:         Test BPD █▁▁▁
+wandb:       Test LogPx █▁▁▁
+wandb:   Train Avg Loss ▆▄█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Train Batch Loss █▁▁▄▁▁▁▁▁▁▁▁▁▁▁▁▁▁▄▁
+wandb:          Val BPD ▇▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁
+wandb:        Val LogPx ▇▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁
+wandb: 
+wandb: Run summary:
+wandb:     Best Val BPD 3.23938
+wandb:   Best Val LogPx 1760.36792
+wandb:            Epoch 20
+wandb:             Note Saving checkpoint to...
+wandb:         Test BPD 3.23276
+wandb:       Test LogPx 1756.76819
+wandb:   Train Avg Loss 141192.68032
+wandb: Train Batch Loss 4725.77686
+wandb:          Val BPD 9.40956
+wandb:        Val LogPx 5113.41211
+wandb: 
+wandb: 🚀 View run 2L-16K_IF_MNIST_Adam_Exp_0.997_0.001_01:05:2024 00:01:51 at: https://wandb.ai/inv_flow/Inv_Flow_MNIST/runs/1m64uzjk
+wandb: ⭐️ View project at: https://wandb.ai/inv_flow/Inv_Flow_MNIST

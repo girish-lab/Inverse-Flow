@@ -36,7 +36,7 @@ now = datetime.now()
 run_name = now.strftime("%d:%m:%Y %H:%M:%S")
 optimizer_ = "Adam" # SGD, Adam, AdamW
 scheduler_ = "Exp_0.997"
-lr = 1e-4 # 1e-3, 1e-4*, 1e-5, 1e-6, 
+lr = 1e-3 # 1e-3, 1e-4*, 1e-5, 1e-6, 
 
 # look at the log scale, translation  
 def create_model(num_blocks=2, block_size=16, activation='Spline', sym_recon_grad=False, 
@@ -45,7 +45,7 @@ def create_model(num_blocks=2, block_size=16, activation='Spline', sym_recon_gra
     current_size = current_size
     act = activations[activation]
 
-    alpha = 1e-6
+    alpha = 1e-5
     layers = [
         Dequantization(UniformDistribution(size=current_size)),
         Normalization(translation=0, scale=256),
@@ -72,7 +72,7 @@ def create_model(num_blocks=2, block_size=16, activation='Spline', sym_recon_gra
             #     layers.append(act(current_size))
 
         if split_prior and b < num_blocks - 1:
-            layers.append(SplitPrior(current_size, NegativeGaussianLoss))
+            # layers.append(SplitPrior(current_size, NegativeGaussianLoss))
             current_size = (current_size[0] // 2, current_size[1], current_size[2])
 
     return FlowSequential(NegativeGaussianLoss(size=current_size), 
@@ -88,16 +88,16 @@ def main():
         'lr': lr,
         'num_blocks': 1,
         'block_size': 8,
-        'epochs': 20,
-        'batch_size': 400,
-        'grad_clip': 1.010, # for grad clipping
+        'epochs': 40,
+        'batch_size': 1000,
+        'grad_clip': 0.10, # for grad clipping
         'grad_clip_norm': True, # 'inf', 'l2
         'modified_grad': False, 
         'add_recon_grad': False,
         'sym_recon_grad': False,
-        'activation': 'SLR', # 'SLR', 'Spline
+        'activation': 'Spline', # 'SLR', 'Spline
         'actnorm': True,
-        'split_prior': True,
+        'split_prior': False,
         'recon_loss_weight': 1.0,
         'sample_true_inv': True,
         'plot_recon': True,
@@ -124,15 +124,15 @@ def main():
     print('Total_params Inv_flow , :', pytorch_total_params)
 
     # optimizer = optim.SGD(model.parameters(), lr=config['lr'], momentum=0.9)
-    optimizer = optim.Adam(model.parameters(), lr=config['lr'])
+    # optimizer = optim.Adam(model.parameters(), lr=config['lr'])
     # optimizer = optim.Adamax(model.parameters(), lr=config['lr'])
-    # optimizer = optim.Adam(model.parameters(), lr=config['lr'], weight_decay=0.01)
+    optimizer = optim.Adam(model.parameters(), lr=config['lr'], weight_decay=0.01)
 
     # scheduler = StepLR(optimizer, step_size=1, gamma=1.0)
     # scheduler = None
-    scheduler = MultiStepLR(optimizer, milestones=[3, 10, 20, 50], gamma=0.1)   
+    # scheduler = MultiStepLR(optimizer, milestones=[3, 10, 20, 50], gamma=0.1)   
     # scheduler = ReduceLROnPlateau(optimizer, 'min', factor=0.5, patience=10, threshold=1.0) 
-    # scheduler = ExponentialLR(optimizer, gamma=0.998, last_epoch=-1)
+    scheduler = ExponentialLR(optimizer, gamma=0.98, last_epoch=-1)
     experiment = Experiment(model, train_loader, val_loader, test_loader,
                             optimizer, scheduler, **config)
 
