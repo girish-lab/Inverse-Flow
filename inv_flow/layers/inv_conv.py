@@ -20,9 +20,9 @@ from torch.nn.modules.utils import _pair
 # import inv_conv # cuda load module for inv_conv 
 import inv_conv_with_bp # cuda load module for inv_conv 
 
-from snf.layers.flowlayer import FlowLayer, mark_expensive, \
+from layers.flowlayer import FlowLayer, mark_expensive, \
     ModifiedGradFlowLayer
-from snf.utils.toeplitz import get_sparse_toeplitz, get_toeplitz_idxs
+from utils.toeplitz import get_sparse_toeplitz, get_toeplitz_idxs
 # from snf.utils.convbackward import conv2d_backward
 
 # @lru_cache(maxsize=128)
