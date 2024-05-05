@@ -1,53 +1,55 @@
-# Inv_Flow: Invertible n x n Convolutions for Normalizing Flows
+# Inv_Flow: Invertible Convolutions for Normalizing Flows
+<!-- (https://arxiv.org/abs/2301.09266)
+## [Paper](https://www.scitepress.org/Link.aspx?doi=10.5220/0011876600003417) accepted: [VISAPP'23](https://visapp.scitevents.org/Home.aspx) -->
 
+<!-- ## Thesis Defence Presentation: ![Presentation](misc/Thesis_Defence.pdf)  -->
 
-## Environment Setup
+<!-- ![Flow overview](misc/FInCFlow_model.png)
+Generating Images using Fast Normalizing Flows with Invertible Convolution
 
-### Developing in conda
-- create a `python3.9` env with all packages in requirments.txt installed in ~/env/inv_flow
+![Flow overview](misc/inverse_direct2.gif)
+Inverse calculation of a Lower Triangular matrix with Substitution Method
+![Flow overview](misc/inverse_finc2.gif)
+Inverse calculation of a Lower Triangular MAtrix from our method -->
+
+## Developing in conda
+- create a `python3.9` venv with all packages in requirments.txt installed in ~/venv/inv_flow
 - source env.sh
+## requirements 
+a). for cuda version 10.2
 
-
-1. Make sure you have Anaconda or Miniconda installed.
-2. Clone repo with `git clone https://github.com/naagar/Inv_Flow/`
-3. Go into the cloned repo: `cd Inv_Flow`
-4. Create the environment: `conda env create inv_flow python=3.9`
-5. Activate the environment: `source activate inv_flow`
-
-
-### or Install requirements with Anaconda:
-`conda env create -f conda_environment.yml`
-
-## PyTorch requirements (with python3.9)
 `pip3 install torch==1.8.2 torchvision==0.9.2 torchaudio==0.8.2 --extra-index-url https://download.pytorch.org/whl/lts/1.8/cu102`
 
-`pip3 install Ninja==1.10.2.3 cython torchsummary wandb`
+b). for cuda version 11.7
 
-Note that this package requires Ninja to build the C++ extensions required to efficiently compute the Fast-Flow gradient, however this should be installed automatically with pytorch.
+`conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.7 -c pytorch -c nvidia`
 
+`pip3 install Ninja==1.10.2.3 cython torchsummary matplotlib wandb`
 
-## Install SNF package
-Install the snf package locally for development. This allows you to run experiments with the snf command. 
+## Experiments
 
-Download the SNF module form : [Self Normalizing Flows](https://github.com/akandykeller/SelfNormalizingFlows)
-Clone repo with 
+### Environment Setup
+1. Make sure you have Anaconda or Miniconda installed.
+2. Clone repo with `git clone https://github.com/naagar/Inv_Flow/.`
+3. Go into the cloned repo: `cd Inv_Flow`
+4. Create the environment: `conda env create inv_flow python=3.7`
+5. Activate the environment: `source activate inv_flow`
 
-`git clone https://github.com/akandykeller/SelfNormalizingFlows/`
+## Getting Started
+#### Install requirements with Anaconda:
+`conda env create -f conda_environment.yml`
 
-At the root of the project directory run:
+### create inv_conv module for inv_conv_cuda with inv, fwd, dw, dy
+`cd inv_flow/utils/inv_conv_cuda`
+`python setup.py install`
 
-     pip install -e .
+#### Install snf package
+Install the snf package locally for development. This allows you to run experiments with the `Inv_Flow` command. At the root of the project directory run:
+`pip install -e .`
 
-## Create the inv_conv package with cuda implimentationI
-(Custom C++ and CUDA Extensions for Inv_conv) 
+Note that this package requires Ninja to build the C++ extensions required to efficiently compute the Fast-Flow gradient, however this should be installed automatically with pytorch or 
 
-### create inv_conv module for inv_conv_cuda with inverse pass, fwd pass, dw gradients, dy gradients
-    cd inv_flow/utils/inv_conv_cuda
-
-    python setup.py install
-
-Docs with ecample: [Custom C++ and CUDA Extensions](https://pytorch.org/tutorials/advanced/cpp_extension.html)
-
+`pip install Ninja`
 
 #### (Optional) Setup Weights & Biases:
 This repository uses Weight & Biases for experiment tracking. By deafult this is set to off. However, if you would like to use this (highly recommended!) functionality, all you have to do is install weight & biases as follows, and then set `'wandb': True`,  `'wandb_project': YOUR_PROJECT_NAME`, and `'wandb_entity': YOUR_ENTITY_NAME` in the default experiment config at the top of snf/train/experiment.py.
@@ -81,9 +83,7 @@ The configuration dictionary is mainly used to modify the training procedure spe
 - `'batch_size'`: *int*, number of samples per batch
 - `'recon_loss_weight'`: *float*, Value of $\lambda$ weight on reconstruction gradient. 
 - `'sym_recon_grad'`: Bool, if True, and `add_recon_grad` is true, use a symmetric version of the reconstruction loss for increased stability.
-- `'grad_clip_norm'`: *bool*, grad clipping normalization ('inf', 'l2)
-- `'grad_clip'`: *float*, For grad clipping
-  
+- `'grad_clip_norm'`: *float*, maximum magnitude which to scale gradients to if greater than.
 
 #### Model Architecutre Options
 - `'activation'`: *str*: Name of activation function to use for FC and CNN models (one of `SLR, LLR, Spline, SELU`).
@@ -92,7 +92,6 @@ The configuration dictionary is mainly used to modify the training procedure spe
 - `'num_layers'`: *int*, Number of layers for CNN and FC models
 - `'actnorm'`: *bool*, if True, use ActNorm in glow-like models
 - `'split_prior'`: *bool*, if True, use Split Priors between each block in glow-like models
-  
 
 #### Logging Options
 - `'wandb'`: *bool*, if True, use weights & biases logging
@@ -110,35 +109,23 @@ The configuration dictionary is mainly used to modify the training procedure spe
 - `'plot_recon'`: *bool*, if True, plot reconstruction of training images.
 - `'log_timing'`: *bool*, if True, compute mean and std. of time per batch and time per sample. Print to screen and save as summary statistic of experiment.
 
-
-## Model Arch. 
-default 
-
-![arch](images/inv_flow_arch.png)
 ## Running an experiment
 ### MNIST 
 
-  `cd inv_Flow` 
-  `python inv_flow_mnist.py`
+Inv_Flow/inv_flow_mnist.py
 
+`set-  -n_blocks=3, block_size=32, image_size=(1, 28, 28)`
 
-For muitli step arch. 
-`set-  -n_blocks=2, block_size=16, image_size=(1, 28, 28)` and run
-      `python inv_flow_mnist_MultiGPUs.py`
-
-### CIFAR10
-
-`set-  -n_blocks=3, block_size=32,` and run
-      `python inv_flow_cifar_MultiGPUs.py`
-
+      python inv_flow_mnist.py
+      
 ### Imagenet 32/64
 
-inv_Flow/inv_flow_imagenet_multi_gpu.py
+Inv_Flow/inv_flow_imagenet_multi_gpu.py
 
 `set-  resulotion=32/64, -n_blocks=2, block_size=16, image_size=(3, 32, 32)`
 
       python inv_flow_imagenet_multi_gpu.py   
-inv_Flow/inv_flow_celeba_multi_gpu.py
+Inv_Flow/inv_flow_celeba_multi_gpu.py
 
 `set-  resulotion=32/64/128, -n_blocks=3, block_size=32, image_size=(3, 32, 32)`
 
@@ -176,5 +163,4 @@ Please use the following BibTex Code to cite our papers
         isbn={978-989-758-634-7},
         issn={2184-4321},
         }
-
 
