@@ -3,7 +3,7 @@ import torch.nn as nn
 from .flowlayer import ModifiedGradFlowLayer
 from .flowlayer import PreprocessingFlowLayer
 from .activations import FlowActivationLayer
-from .selfnorm import SelfNormConv
+# from .selfnorm import SelfNormConv
 # from .conv import PaddedConv2d
 
 class FlowSequential(nn.Module):
@@ -54,10 +54,10 @@ class FlowSequential(nn.Module):
             if isinstance(module, FlowActivationLayer):
                 yield module
 
-    def selfnorm_modules(self):
-        for module in self.sequence_modules:
-            if isinstance(module, SelfNormConv):
-                yield module
+    # def selfnorm_modules(self):
+    #     for module in self.sequence_modules:
+    #         if isinstance(module, SelfNormConv):
+    #             yield module
 
     def preprocessing_modules(self):
         for module in self.sequence_modules:
