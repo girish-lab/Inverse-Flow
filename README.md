@@ -12,48 +12,56 @@ Inverse calculation of a Lower Triangular matrix with Substitution Method
 ![Flow overview](misc/inverse_finc2.gif)
 Inverse calculation of a Lower Triangular MAtrix from our method -->
 
-## Developing in conda
-- create a `python3.9` venv with all packages in requirments.txt installed in ~/venv/inv_flow
 
-            conda create env -n inv_flow
-- source env.sh
-## requirements 
-a). for cuda version 10.2
+  
 
-      pip3 install torch==1.8.2 torchvision==0.9.2 torchaudio==0.8.2 --extra-index-url https://download.pytorch.org/whl/lts/1.8/cu102
 
-b). for cuda version 11.7
-
-      conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.7 -c pytorch -c nvidia
-
-$ to create the cuda extension
-
-      pip3 install Ninja==1.10.2.3 cython torchsummary matplotlib wandb`
-
-## Experiments
 
 ### Environment Setup
+Step-0: clone the repo and create conda venv
 1. Make sure you have Anaconda or Miniconda installed.
-2. Clone repo with `git clone https://github.com/naagar/Inv_Flow/.`
+2. Clone repo with `git clone https://github.com/naagar/Inv_Flow/`
 3. Go into the cloned repo: `cd Inv_Flow`
-4. Create the environment: `conda env create inv_flow python=3.7`
-5. Activate the environment: `source activate inv_flow`
 
-## Getting Started
-#### Install requirements with Anaconda:
-`conda env create -f conda_environment.yml`
 
-### create inv_conv module for inv_conv_cuda with inv, fwd, dw, dy
-`cd inv_flow/utils/inv_conv_cuda`
-`python setup.py install`
 
-#### Install snf package
-Install the snf package locally for development. This allows you to run experiments with the `Inv_Flow` command. At the root of the project directory run:
-`pip install -e .`
+#### Step-1: create env (with python3.9) in Anaconda and install requirements:
+      conda env create -f conda_environment.yml
 
-Note that this package requires Ninja to build the C++ extensions required to efficiently compute the Fast-Flow gradient, however this should be installed automatically with pytorch or 
+      pip install ninja torchsummary cython wandb
+Or 
 
-`pip install Ninja`
+Developing in conda
+- create a `python3.9` env manually
+- (with all packages in requirments.txt installed in ~/venv/inv_flow )
+
+      conda create env -n inv_flow python=3.9
+
+<!-- - source env.sh -->
+- Requirements 
+  - a). for cuda version 10.2
+
+            pip3 install torch==1.8.2 torchvision==0.9.2 torchaudio==0.8.2 --extra-index-url https://download.pytorch.org/whl/lts/1.8/cu102
+
+  - b). for cuda version 11.7
+
+            conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.7 -c pytorch -c nvidia
+
+  - requirements to create the cuda extension
+
+            pip3 install Ninja==1.10.2.3 cython==3.0.10 torchsummary matplotlib wandb
+#### Step-2: Activate the environment: `source activate inv_flow`
+
+      conda activate inv_flow
+
+#### Step-3: create inv_conv module for inv_conv_cuda with inv, fwd, dw, dy
+      cd inv_flow/utils/inv_conv_cuda
+
+      python setup.py install
+
+
+
+Note: that this package requires Ninja to build the C++ extensions required to efficiently compute the Inv_Flow fwd pass, reverse pass and gradient (dy, dw), however this should be installed automatically with pytorch or install manually https://ninja-build.org/ , Ninja==1.10.2.3, cython==3.0.10
 
 #### (Optional) Setup Weights & Biases:
 This repository uses Weight & Biases for experiment tracking. By deafult this is set to off. However, if you would like to use this (highly recommended!) functionality, all you have to do is install weight & biases as follows, and then set `'wandb': True`,  `'wandb_project': YOUR_PROJECT_NAME`, and `'wandb_entity': YOUR_ENTITY_NAME` in the default experiment config at the top of snf/train/experiment.py.
@@ -113,23 +121,28 @@ The configuration dictionary is mainly used to modify the training procedure spe
 - `'plot_recon'`: *bool*, if True, plot reconstruction of training images.
 - `'log_timing'`: *bool*, if True, compute mean and std. of time per batch and time per sample. Print to screen and save as summary statistic of experiment.
 
-## Running an experiment
-### MNIST 
+## Running an experiment or training
 
-Inv_Flow/inv_flow_mnist.py
+### 1. MNIST dataset
+
+inv_Flow/inv_flow_mnist.py
 
 `set-  -n_blocks=3, block_size=32, image_size=(1, 28, 28)`
 
       python inv_flow_mnist.py
-      
-### Imagenet 32/64
 
-Inv_Flow/inv_flow_imagenet_multi_gpu.py
+### 2. CIFAR10
+
+      python inv_flow_cifar10_multi_GPUs.py
+### 3. Imagenet 32/64
+
+inv_Flow/inv_flow_imagenet_multi_gpu.py
 
 `set-  resulotion=32/64, -n_blocks=2, block_size=16, image_size=(3, 32, 32)`
 
       python inv_flow_imagenet_multi_gpu.py   
-Inv_Flow/inv_flow_celeba_multi_gpu.py
+### 4. CelebA: 
+inv_Flow/inv_flow_celeba_multi_gpu.py
 
 `set-  resulotion=32/64/128, -n_blocks=3, block_size=32, image_size=(3, 32, 32)`
 
