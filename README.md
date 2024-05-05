@@ -14,17 +14,21 @@ Inverse calculation of a Lower Triangular MAtrix from our method -->
 
 ## Developing in conda
 - create a `python3.9` venv with all packages in requirments.txt installed in ~/venv/inv_flow
+
+            conda create env -n inv_flow
 - source env.sh
 ## requirements 
 a). for cuda version 10.2
 
-`pip3 install torch==1.8.2 torchvision==0.9.2 torchaudio==0.8.2 --extra-index-url https://download.pytorch.org/whl/lts/1.8/cu102`
+      pip3 install torch==1.8.2 torchvision==0.9.2 torchaudio==0.8.2 --extra-index-url https://download.pytorch.org/whl/lts/1.8/cu102
 
 b). for cuda version 11.7
 
-`conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.7 -c pytorch -c nvidia`
+      conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.7 -c pytorch -c nvidia
 
-`pip3 install Ninja==1.10.2.3 cython torchsummary matplotlib wandb`
+$ to create the cuda extension
+
+      pip3 install Ninja==1.10.2.3 cython torchsummary matplotlib wandb`
 
 ## Experiments
 
