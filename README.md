@@ -46,8 +46,7 @@ Developing in conda
   - b). for cuda version 11.7
 
             conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.7 -c pytorch -c nvidia
-
-  - requirements to create the cuda extension
+- Requirements to create the cuda extension for iv_conv layer
 
             pip3 install Ninja==1.10.2.3 cython==3.0.10 torchsummary matplotlib wandb
 #### Step-2: Activate the environment: `source activate inv_flow`
