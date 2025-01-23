@@ -1,5 +1,5 @@
 # Inverse Flow: Parallel Backpropagation for Inverse of a Convolution with Application to Normalizing Flows
-
+Paper: https://arxiv.org/abs/2410.14634
 
 ### Environment Setup
 Step-0: clone the repo and create a conda env
