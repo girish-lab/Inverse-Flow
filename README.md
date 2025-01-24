@@ -21,24 +21,45 @@ To install Weights & Biases follow the [quickstart guide here](https://docs.wand
 Make sure that you have first [created a weights and biases account](https://app.wandb.ai/login?signup=true), and filled in the correct `wandb_project` and `wandb_entity` in the experiment config.
 
 ## Running an experiment
-To rerun the experiments from table 1, you can run the following commands:
-- `inf --name 'selfnorm_fc_mnist'`
-- `inf --name 'exact_fc_mnist'`
-- `inf --name 'selfnorm_cnn_mnist'`
-- `inf --name 'exact_cnn_mnist'`
-- `inf --name 'emerging_cnn_mnist'`
-- `inf --name 'exponential_cnn_mnist'`
-- `inf --name 'conv1x1_glow_mnist'`
-- `inf --name 'selfnorm_glow_mnist'`
-- `inf --name 'if_cnn_mnist'`
-- `inf --name 'if_exact_cnn_mnist'`
+<!-- To rerun the experiments from table 2, you can run the following commands: -->
+<!-- - `inf --name 'selfnorm_fc_mnist'` -->
+<!-- - `inf --name 'exact_fc_mnist'` -->
+<!-- - `inf --name 'selfnorm_cnn_mnist'` -->
+<!-- - `inf --name 'exact_cnn_mnist'` -->
+<!-- - `inf --name 'emerging_cnn_mnist'` -->
+<!-- - `inf --name 'exponential_cnn_mnist'` -->
+<!-- - `inf --name 'conv1x1_glow_mnist'` -->
+<!-- - `inf --name 'selfnorm_glow_mnist'` -->
+<!-- - `inf --name 'if_cnn_mnist'` -->
+<!-- - `inf --name 'if_exact_cnn_mnist'` -->
 
 
 To rerun the experiments from table 2:
-- `inf --name 'if_conv1x1_glow_cifar'`
-- `inf --name 'if_selfnorm_glow_cifar'`
+<!-- - `inf --name 'if_conv1x1_glow_cifar'` -->
+- `inf --name 'emerging_cnn_mnist'`
+<!-- - `inf --name 'emerging_cnn_mnist'` -->
+- `inf --name 'ff_glow_mnist'`
+- `inf --name 'selfnorm_glow_mnist'`
+- `inf --name 'if_glow_mnist'`
+
+<!-- - `inf --name 'if_selfnorm_glow_cifar'`
 - `inf --name 'if_conv1x1_glow_imagenet'`
-- `inf --name 'if_glow_imagenet'`
+- `inf --name 'if_glow_imagenet'` -->
+<!-- - `inf --name 'selfnorm_cnn_mnist'` -->
+
+To rerun the experiments from table 3, you can run the following commands after setting L=2, K=16 (except Mintnet):
+<!-- - `inf --name 'emerging_cnn_mnist'` -->
+- `inf --name 'selfnorm_glow_mnist'`
+- `inf --name 'ff_glow_mnist'`
+- `inf --name 'emerging_cnn_mnist'`
+- `inf --name 'if_glow_mnist'`
+
+To rerun the experiments from table 4, you can run the following commands, first set the number of layers:
+- `inf --name 'exact_fc_mnist'` 
+- `inf --name 'exponential_cnn_mnist'`
+- `inf --name 'emerging_cnn_mnist'`
+- `inf --name 'selfnorm_cnn_mnist'`
+- `inf --name 'if_cnn_mnist'`
 
 To recreate the results of figure 4, run:
 - `inf --name 'inf_timescaling'`
