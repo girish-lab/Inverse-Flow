@@ -6,6 +6,12 @@ Paper: https://arxiv.org/abs/2410.14634
 #### Install requirements with Anaconda:
 `conda env create -f conda_environment.yml`
 
+Ensure you have GCC 9 or later installed. You can install GCC 9 on Ubuntu using the following commands: 
+
+        sudo apt update
+        sudo apt install gcc-9 g++-9
+        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-9
+        sudo update-alternatives --config gcc
 #### Install inf package
 Install the inf package locally for development. This allows you to run experiments with the `inf` command. At the root of the project directory run:
 `pip install -e .`
