@@ -60,8 +60,8 @@ To rerun the experiments from table 4, you can run the following commands, first
 - `inf --name 'selfnorm_cnn_mnist'`
 - `inf --name 'if_cnn_mnist'`
 
-To recreate the results of figure 4, run:
-- `inf --name 'inf_timescaling'`
+<!-- To recreate the results of figure 4, run:
+- `inf --name 'inf_timescaling'` -->
 
 <!-- To recreate the results of Table A.5 (using improved constrained optimization), run:
 - `inf --name 'geco_selfnorm_glow_mnist` -->
