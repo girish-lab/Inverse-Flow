@@ -1,7 +1,6 @@
-# Inverse-Flows
-<!-- *Paper*: https://arxiv.org/abs/2011.07248 -->
+# Inverse-Flow: Parallel Backpropagation for Inverse of a Convolution with Application to Normalizing Flows
 
-<!-- *Blog Post*: http://keller.org/research/2020-10-21-self-normalizing-flows/ -->
+Paper: https://arxiv.org/abs/2410.14634
 
 ## Getting Started
 #### Install requirements with Anaconda:
