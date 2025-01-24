@@ -1,0 +1,3 @@
+# ninja log v5
+1	16510	1733565033117341064	/home/sandeep.nagar/SelfNormalizingFlows/snf/utils/inv_conv_cuda/build/temp.linux-x86_64-cpython-39/inv_conv_with_bp_general.o	e5ba597546762062
+2	39955	1733565056542357814	/home/sandeep.nagar/SelfNormalizingFlows/snf/utils/inv_conv_cuda/build/temp.linux-x86_64-cpython-39/inv_conv_with_bp_kernel_general.o	cd770286cf87c102

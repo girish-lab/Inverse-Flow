@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+Inverse-Flow.egg-info/PKG-INFO
+Inverse-Flow.egg-info/SOURCES.txt
+Inverse-Flow.egg-info/dependency_links.txt
+Inverse-Flow.egg-info/entry_points.txt
+Inverse-Flow.egg-info/top_level.txt
+inf/__init__.py
+inf/cli.py
+inf/conv1x1_glow_cifar.py
+inf/emerging_cnn_mnist.py
+inf/if_glow_cifar.py
+inf/if_imagenet_multi_gpu.py
+inf/if_multiGPU_imagenet32.py
+inf/selfnorm_glow_imagenet.py
+inf/test_memory_speed.py

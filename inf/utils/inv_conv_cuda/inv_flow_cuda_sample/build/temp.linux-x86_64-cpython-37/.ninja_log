@@ -1,0 +1,3 @@
+# ninja log v5
+1	18619	1711046963052373562	/home/sandeep.nagar/inverse_NF/inv_conv_cuda/inv_flow_cuda/build/temp.linux-x86_64-cpython-37/inv_conv_cuda_general.o	12a86d241e5e5907
+2	35313	1711046979747377296	/home/sandeep.nagar/inverse_NF/inv_conv_cuda/inv_flow_cuda/build/temp.linux-x86_64-cpython-37/inv_conv_cuda_kernel_general.o	e32d5b0995cbc8fa

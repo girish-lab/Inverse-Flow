@@ -1,0 +1,13 @@
+# ninja log v5
+2	27501	1712635457781316112	/home/sandeep.nagar/inv_flow_snf/snf/utils/inv_conv_cuda_4D/build/temp.linux-x86_64-cpython-37/inv_general.o	f5afcdb5ffdc3b17
+2	47018	1712635477274288457	/home/sandeep.nagar/inv_flow_snf/snf/utils/inv_conv_cuda_4D/build/temp.linux-x86_64-cpython-37/inv_kernel_general.o	6b3690956362da28
+7	21485	1712638615602098857	/home/sandeep.nagar/inv_flow_snf/snf/utils/inv_conv_cuda_4D/build/temp.linux-x86_64-cpython-37/inv_conv_with_bp_general.o	dde57a9066f2093f
+7	40727	1712638634843073419	/home/sandeep.nagar/inv_flow_snf/snf/utils/inv_conv_cuda_4D/build/temp.linux-x86_64-cpython-37/inv_conv_with_bp_kernel_general.o	b1ceda717bf0f34b
+92	21421	1712639415676040845	/home/sandeep.nagar/inv_flow_snf/snf/utils/inv_conv_cuda_4D/build/temp.linux-x86_64-cpython-37/inv_conv_with_bp_general.o	9eb245471ef6b514
+92	41141	1712639435388016761	/home/sandeep.nagar/inv_flow_snf/snf/utils/inv_conv_cuda_4D/build/temp.linux-x86_64-cpython-37/inv_conv_with_bp_kernel_general.o	7f4ac4a1de5d9034
+110	40416	1712643342152190142	/home/sandeep.nagar/inv_flow_snf/snf/utils/inv_conv_cuda_4D/build/temp.linux-x86_64-cpython-37/inv_conv_with_bp_kernel_general.o	7f4ac4a1de5d9034
+0	24037	1714941553386216176	/home/sandeep.nagar/inv_flow_ff/inv_flow/utils/inv_conv_cuda/build/temp.linux-x86_64-cpython-37/inv_conv_with_bp_general.o	2037d61aebd86936
+1	42675	1714941572023179031	/home/sandeep.nagar/inv_flow_ff/inv_flow/utils/inv_conv_cuda/build/temp.linux-x86_64-cpython-37/inv_conv_with_bp_kernel_general.o	ac76e064c478141d
+1	18853	1718706397588950655	/home/sandeep.nagar/snf_invf/snf/utils/inv_conv_cuda/build/temp.linux-x86_64-cpython-37/inv_conv_with_bp_general.o	daceb791a778a7f4
+1	35936	1718706414673955816	/home/sandeep.nagar/snf_invf/snf/utils/inv_conv_cuda/build/temp.linux-x86_64-cpython-37/inv_conv_with_bp_kernel_general.o	69c3bd978f91b3ae
+2	12115	1720246649321325281	/home/sandeep.nagar/SelfNormalizingFlows/snf/utils/inv_conv_cuda/build/temp.linux-x86_64-cpython-37/inv_conv_with_bp_general.o	b3b6288a4a7d67ee

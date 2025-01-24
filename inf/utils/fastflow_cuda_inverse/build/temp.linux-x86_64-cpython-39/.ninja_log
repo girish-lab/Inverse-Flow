@@ -1,0 +1,5 @@
+# ninja log v5
+2	15553	1732951420	/home/sandeep.nagar/SelfNormalizingFlows/snf/utils/fastflow_cuda_inverse/build/temp.linux-x86_64-cpython-39/cinc_cuda_level2.o	24b7bd378707fa89
+1	38544	1732951443	/home/sandeep.nagar/SelfNormalizingFlows/snf/utils/fastflow_cuda_inverse/build/temp.linux-x86_64-cpython-39/cinc_cuda_kernel_level2.o	f64b463982f80d3e
+1	15701	1732951459	/home/sandeep.nagar/SelfNormalizingFlows/snf/utils/fastflow_cuda_inverse/build/temp.linux-x86_64-cpython-39/cinc_cuda_level1.o	da80affcdc841099
+0	38494	1732951482	/home/sandeep.nagar/SelfNormalizingFlows/snf/utils/fastflow_cuda_inverse/build/temp.linux-x86_64-cpython-39/cinc_cuda_kernel_level1.o	7dfef57a2e1768ff

@@ -1,7 +1,0 @@
-inv_conv_cuda_general.cpp
-inv_conv_cuda_kernel_general.cu
-setup.py
-inv_conv_cuda.egg-info/PKG-INFO
-inv_conv_cuda.egg-info/SOURCES.txt
-inv_conv_cuda.egg-info/dependency_links.txt
-inv_conv_cuda.egg-info/top_level.txt

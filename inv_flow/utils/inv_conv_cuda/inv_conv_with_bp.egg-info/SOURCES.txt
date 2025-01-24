@@ -1,8 +1,0 @@
-README.md
-inv_conv_with_bp_general.cpp
-inv_conv_with_bp_kernel_general.cu
-setup.py
-inv_conv_with_bp.egg-info/PKG-INFO
-inv_conv_with_bp.egg-info/SOURCES.txt
-inv_conv_with_bp.egg-info/dependency_links.txt
-inv_conv_with_bp.egg-info/top_level.txt
