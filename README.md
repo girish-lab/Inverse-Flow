@@ -125,3 +125,18 @@ The configuration dictionary is mainly used to modify the training procedure spe
 
 ## Acknowledgements
 iHub-IIITH is acknowledged for financial support.
+
+## Citation: 
+
+        @InProceedings{nagar2025inverseflow,
+        title = {Parallel Backpropagation for Inverse of a Convolution with Application to Normalizing Flows},
+        author = Nagar, Sandeep and Varma, Girish}
+        booktitle = {Proceedings of The 28th International Conference on Artificial Intelligence and Statistics},
+        year = {2025},
+        volume = {239},
+        series = {Proceedings of Machine Learning Research},
+        month = {03--05 May},
+        publisher = {PMLR},
+        pdf = {https://arxiv.org/pdf/2410.14634},
+        url = {https://arxiv.org/abs/2410.14634},
+      }
