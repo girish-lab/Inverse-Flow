@@ -1,7 +1,8 @@
-# Inverse-Flow: Parallel Backpropagation for Inverse of a Convolution with Application to Normalizing Flows
+# [Inverse-Flow: Parallel Backpropagation for Inverse of a Convolution with Application to Normalizing Flows](https://openreview.net/forum?id=9e0yjZevPe)
 
-Paper: https://arxiv.org/abs/2410.14634
+Paper: [arxiv](https://arxiv.org/abs/2410.14634)
 
+Project Page: [Inverse-Flow](https://naagar.github.io/projectPage_InverseFlow/)
 ## Getting Started
 #### Install requirements with Anaconda:
 `conda env create -f conda_environment.yml`
