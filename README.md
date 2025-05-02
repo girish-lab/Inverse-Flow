@@ -2,7 +2,7 @@
 
 Paper: [arxiv](https://arxiv.org/abs/2410.14634)
 
-Project Page: [Inverse-Flow](https://naagar.github.io/projectPage_InverseFlow/)
+Project Page: [Inverse-Flow](https://naagar.github.io/InverseFlow/)
 ## Getting Started
 #### Install requirements with Anaconda:
 `conda env create -f conda_environment.yml`
